@@ -9,6 +9,12 @@ public class FitnessTracker {
     // TODO 1: INCLUDE YOUR ATTRIBUTES HERE. CHECK THE UML CLASS DIAGRAM TO INCLUDE ALL ATTRIBUTES LISTED AND THEIR TYPES.
 
     // START CODE
+	private String firstName;
+	private String lastName;
+	private String gender;
+	private int stepsTaken;
+	private int caloriesBurned;
+	private int activeMinutes;
     // END CODE
 
     // TODO 2: INCLUDE YOUR CONSTRUCTOR HERE.
@@ -21,7 +27,15 @@ public class FitnessTracker {
     // START CODE
     // END CODE
 
-    // TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
+    public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	// TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
     public void displayFitnessData() {
         
         // TODO 5: USE System.out.printf TO SHOW ALL FITNESS DATA. DO NOT MISS ANY ITEM.
