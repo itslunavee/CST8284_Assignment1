@@ -22,6 +22,16 @@ public class FitnessTracker {
     // TODO 2: INCLUDE YOUR CONSTRUCTOR HERE.
 
     // START CODE
+	
+    public FitnessTracker(String firstName, String lastName, String gender, int stepsTaken, int caloriesBurned, int activeMinutes) {
+    	this.firstName = firstName;
+    	this.lastName = lastName;
+    	this.gender = gender;
+    	this.stepsTaken = stepsTaken;
+    	this.caloriesBurned = caloriesBurned;
+    	this.activeMinutes = activeMinutes;
+    }
+    
     // END CODE
 
     // TODO 3: INCLUDE YOUR SET AND GET METHODS HERE. CHECK THE UML CLASS DIAGRAM TO ENSURE ALL ARE COMPLETE.
