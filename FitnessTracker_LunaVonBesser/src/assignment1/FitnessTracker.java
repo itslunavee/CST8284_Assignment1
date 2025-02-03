@@ -87,6 +87,15 @@ public class FitnessTracker {
 	}
 	
 	// END CODE
+	
+	public double distanceWalked(String gender) {
+	    double stepType = switch (gender.toLowerCase()) {
+	        case "female" -> 0.7;
+	        case "male" -> 0.8;
+	        default -> { System.out.println("Invalid entry, please type male or female"); yield 0.0; }
+	    };
+	    return stepType;
+	}
 
 	// TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
     public void displayFitnessData() {
