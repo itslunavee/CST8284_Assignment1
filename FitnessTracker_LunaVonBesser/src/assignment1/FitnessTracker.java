@@ -118,6 +118,8 @@ public class FitnessTracker {
 	}
 	
 	
+	
+	
 
 	// TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
     public void displayFitnessData() {
