@@ -96,6 +96,28 @@ public class FitnessTracker {
 	    };
 	    return stepType;
 	}
+	
+	public double weeklyAvgMinutes(int activeMinutes) {
+		double weeklyAvgMinutes = activeMinutes * 7;
+		return weeklyAvgMinutes;
+	}
+	
+	public String fitnessLevel(int activeMinutes, int caloriesBurned) {
+        if (activeMinutes > 150 && caloriesBurned > 2000) {
+            return "Active";
+        } else if ((activeMinutes >= 75 && activeMinutes <= 150) || 
+                   (caloriesBurned >= 1000 && caloriesBurned <= 2000)) {
+            return "Moderately Active";
+        } else {
+            return "Sedentary";
+        }
+    }
+	
+	public int calculateCalorieDeficit(int maintenance, int caloriesBurned) {
+	    return caloriesBurned - maintenance;
+	}
+	
+	
 
 	// TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
     public void displayFitnessData() {
