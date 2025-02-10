@@ -88,10 +88,10 @@ public class FitnessTracker {
 	
 	// END CODE
 	
-	public double distanceWalked(String gender) {
+	public double distanceWalked(String gender, int stepsTaken) {
 	    double stepType = switch (gender.toLowerCase()) {
-	        case "female" -> 0.7;
-	        case "male" -> 0.8;
+	        case "female" -> 0.7 * stepsTaken;
+	        case "male" -> 0.8 * stepsTaken;
 	        default -> { System.out.println("Invalid entry, please type male or female"); yield 0.0; }
 	    };
 	    return stepType;

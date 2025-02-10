@@ -43,7 +43,7 @@ import java.util.Scanner;
 	        System.out.println("Name: " + tracker.getFirstName() + " " + tracker.getLastName());
 	        System.out.println("Gender: " + tracker.getGender());
 	        System.out.println("Daily Steps: " + tracker.getStepsTaken());
-	        System.out.println("Distance Walked: " + tracker.distanceWalked(gender) + " meters");
+	        System.out.println("Distance Walked: " + tracker.distanceWalked(gender, stepsTaken) + " meters");
 	        System.out.println("Weekly Active Minutes: " + tracker.weeklyAvgMinutes(activeMinutes));
 	        System.out.println("Fitness Level: " + tracker.fitnessLevel(activeMinutes, caloriesBurned));
 	        System.out.println("Daily Calorie Deficit/Surplus: " + tracker.calculateCalorieDeficit(maintenanceCalories, caloriesBurned));
