@@ -6,10 +6,6 @@ package assignment1;
  */
 public class FitnessTracker {
 
-    // TODO 1: INCLUDE YOUR ATTRIBUTES HERE. CHECK THE UML CLASS DIAGRAM TO INCLUDE ALL ATTRIBUTES LISTED AND THEIR TYPES.
-
-    // START CODE
-	
 	private String firstName;
 	private String lastName;
 	private String gender;
@@ -17,11 +13,6 @@ public class FitnessTracker {
 	private int caloriesBurned;
 	private int activeMinutes;
 	
-    // END CODE
-
-    // TODO 2: INCLUDE YOUR CONSTRUCTOR HERE.
-
-    // START CODE
 	
     public FitnessTracker(String firstName, String lastName, String gender, int stepsTaken, int caloriesBurned, int activeMinutes) {
     	this.firstName = firstName;
@@ -32,11 +23,6 @@ public class FitnessTracker {
     	this.activeMinutes = activeMinutes;
     }
     
-    // END CODE
-
-    // TODO 3: INCLUDE YOUR SET AND GET METHODS HERE. CHECK THE UML CLASS DIAGRAM TO ENSURE ALL ARE COMPLETE.
-
-    // START CODE
     
     public String getFirstName() {
 		return firstName;
@@ -86,7 +72,6 @@ public class FitnessTracker {
 		this.activeMinutes = activeMinutes;
 	}
 	
-	// END CODE
 	
 	public double distanceWalked(String gender, int stepsTaken) {
 	    double stepType = switch (gender.toLowerCase()) {
@@ -103,10 +88,10 @@ public class FitnessTracker {
 	}
 	
 	public String fitnessLevel(int activeMinutes, int caloriesBurned) {
-        if (activeMinutes > 150 && caloriesBurned > 2000) {
+        if (activeMinutes * 7 > 150 && caloriesBurned * 7 > 2000) {
             return "Active";
-        } else if ((activeMinutes >= 75 && activeMinutes <= 150) || 
-                   (caloriesBurned >= 1000 && caloriesBurned <= 2000)) {
+        } else if ((activeMinutes * 7 >= 75 && activeMinutes * 7 <= 150) || 
+                   (caloriesBurned * 7 >= 1000 && caloriesBurned * 7 <= 2000)) {
             return "Moderately Active";
         } else {
             return "Sedentary";
@@ -121,20 +106,20 @@ public class FitnessTracker {
 	
 	
 
-	// TODO 4: THIS METHOD SHOULD DISPLAY ALL USER FITNESS DATA. DO NOT MISS ANY DATA/INFORMATION.
-    public void displayFitnessData() {
-        
-        // TODO 5: USE System.out.printf TO SHOW ALL FITNESS DATA. DO NOT MISS ANY ITEM.
+	public void displayFitnessData(int maintenanceCalories) {
+	    System.out.println("Name: " + firstName + " " + lastName);
+	    System.out.println("Gender: " + gender);
+	    System.out.println("Daily Steps: " + stepsTaken);
+	    System.out.println("Distance Walked: " + distanceWalked(gender, stepsTaken) + " meters");
+	    System.out.println("Weekly Active Minutes: " + weeklyAvgMinutes(activeMinutes));
+	    System.out.println("Fitness Level: " + fitnessLevel(activeMinutes, caloriesBurned));
+	    System.out.println("Daily Calorie Deficit/Surplus: " + calculateCalorieDeficit(maintenanceCalories, caloriesBurned));
 
-        // START CODE
+	    // You do not need to modify this piece of code; it is fine as it is.
+	    System.out.println("Fitness Level Criteria:");
+	    System.out.println("Active: More than 150 active minutes per week and over 2000 calories burned.");
+	    System.out.println("Moderately Active: 75-150 active minutes per week or 1000-2000 calories burned.");
+	    System.out.println("Sedentary: Less than 75 active minutes per week and under 1000 calories burned.");
+	}
 
-        // END CODE
-
-        // You do not need to modify this piece of code; it is fine as it is.
-        System.out.println("Fitness Level Criteria:");
-        System.out.println("Active: More than 150 active minutes per week and over 2000 calories burned.");
-        System.out.println("Moderately Active: 75-150 active minutes per week or 1000-2000 calories burned.");
-        System.out.println("Sedentary: Less than 75 active minutes per week and under 1000 calories burned.");
-    }
-
-} // end class FitnessTracker
+}
