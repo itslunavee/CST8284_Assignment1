@@ -26,14 +26,15 @@ public class FitnessTrackerTest2 {
      * tests the {@code distanceWalked} method.
      * verifies that the distance walked is calculated correctly based on the number of steps taken for a male user.
      */
-    @Test
-    public void testDistanceWalkedMale() {
-        FitnessTracker tracker = new FitnessTracker("John", "Doe", "male", 10000, 500, 60);
+	@Test
+	public void testDistanceWalkedM() {
+	    FitnessTracker tracker = new FitnessTracker("Chris", "Redfield", "male", 10000, 500, 60);
 
-        double distanceMale = tracker.distanceWalked("male", 10000);
+	    double distanceMale = tracker.distanceWalked("male", 10000);
 
-        assertEquals(8000.0, distanceMale, 0.001);
-    }
+	    assertEquals(8000.0, distanceMale, 0.001);
+	    assertNotEquals(7000.0, distanceMale, 0.001);
+	}
 
     /**
      * tests the {@code distanceWalked} method.
@@ -41,7 +42,7 @@ public class FitnessTrackerTest2 {
      */
     @Test
     public void testDistanceWalkedFemale() {
-        FitnessTracker tracker = new FitnessTracker("Jane", "Doe", "female", 8000, 500, 45);
+        FitnessTracker tracker = new FitnessTracker("Clair", "Redfield", "female", 8000, 500, 45);
 
         double distanceFemale = tracker.distanceWalked("female", 10000);
         
@@ -65,36 +66,34 @@ public class FitnessTrackerTest2 {
      */
     @Test
     public void testFitnessLevel1() {
-        FitnessTracker tracker = new FitnessTracker("John", "Doe", "male", 10000, 500, 60);
+    	FitnessTracker tracker = new FitnessTracker("Leon", "Kennedy", "male", 10000, 500, 60);
 
         String fitnessLevel = tracker.fitnessLevel(60, 500);
 
-        assertEquals("Active", fitnessLevel);
+        assertTrue(fitnessLevel.equals("Active"));
     }
 
     /**
      * tests the {@code fitnessLevel} method for a "Moderately Active" user.
-     * verifies that the fitness level is correctly determined based on weekly active minutes and calories burned.
      */
     @Test
     public void testFitnessLevel2() {
-        FitnessTracker tracker = new FitnessTracker("Jane", "Doe", "female", 8000, 200, 21);
+    	FitnessTracker tracker = new FitnessTracker("Jill", "Valentine", "female", 8000, 200, 21);
 
         String fitnessLevel = tracker.fitnessLevel(21, 200);
 
-        assertEquals("Moderately Active", fitnessLevel);
+        assertTrue(fitnessLevel.equals("Moderately Active"));
     }
 
     /**
      * tests the {@code fitnessLevel} method for a "Sedentary" user.
-     * verifies that the fitness level is correctly determined based on weekly active minutes and calories burned.
      */
     @Test
     public void testFitnessLevel3() {
-        FitnessTracker tracker = new FitnessTracker("Alice", "Smith", "female", 5000, 100, 10);
+        FitnessTracker tracker = new FitnessTracker("Alice", "Wonderland", "female", 5000, 100, 10);
 
         String fitnessLevel = tracker.fitnessLevel(10, 100);
         
-        assertEquals("Sedentary", fitnessLevel);
+        assertTrue(fitnessLevel.equals("Sedentary"));
     }
 }
