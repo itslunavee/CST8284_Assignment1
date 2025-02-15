@@ -41,7 +41,7 @@ public class FitnessTrackerTest2 {
      * verifies that the distance walked is calculated correctly based on the number of steps taken for a female user.
      */
     @Test
-    public void testDistanceWalkedFemale() {
+    public void testDistanceWalkedF() {
         FitnessTracker tracker = new FitnessTracker("Clair", "Redfield", "female", 8000, 500, 45);
 
         double distanceFemale = tracker.distanceWalked("female", 10000);
