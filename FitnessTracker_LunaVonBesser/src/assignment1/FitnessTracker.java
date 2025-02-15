@@ -1,8 +1,8 @@
 package assignment1;
 
 /**
- * The FitnessTracker class represents a fitness tracking application that captures user data
- * and calculates key metrics to evaluate fitness levels.
+ * The FitnessTracker class represents a fitness tracking application that captures user input
+ * and calculates to evaluate fitness levels.
  * 
  * @author Luna Von Besser
  * @version 1.0
@@ -160,7 +160,7 @@ public class FitnessTracker {
     }
 
     /**
-     * Calculates the weekly average active minutes based on the daily active minutes.
+     * Calculates the weekly average active minutes.
      *
      * @param activeMinutes average number of active minutes by the user in a day.
      * @return weekly average active minutes.
@@ -171,25 +171,23 @@ public class FitnessTracker {
     }
 
     /**
-     * Determines the fitness level of the user based on their weekly active minutes and calories burned.
+     * Determines the fitness level of the user.
      *
      * @param activeMinutes average number of active minutes in a day.
      * @param caloriesBurned number of calories burned in a day.
      * @return fitness level of the user (Active, Moderately Active, or Sedentary).
      */
     public String fitnessLevel(int activeMinutes, int caloriesBurned) {
-        if (activeMinutes * 7 > 150 && caloriesBurned * 7 > 2000) {
-            return "Active";
-        } else if ((activeMinutes * 7 >= 75 && activeMinutes * 7 <= 150) || 
-                   (caloriesBurned * 7 >= 1000 && caloriesBurned * 7 <= 2000)) {
-            return "Moderately Active";
-        } else {
-            return "Sedentary";
-        }
+    	int weeklyMinutes = activeMinutes * 7;
+    	int weeklyCalories = caloriesBurned * 7;
+
+    	if (weeklyMinutes > 150 && weeklyCalories > 2000) return "Active";
+    	if (weeklyMinutes >= 75 || weeklyCalories >= 1000) return "Moderately Active";
+    	return "Sedentary";
     }
 
     /**
-     * Calculates the daily calorie deficit or surplus based on the user's maintenance calories and calories burned.
+     * Returns the calorie surplus/deficit based on maintenance calories.
      *
      * @param maintenance daily maintenance calories.
      * @param caloriesBurned number of calories burned in a day.
@@ -200,7 +198,7 @@ public class FitnessTracker {
     }
 
     /**
-     * Displays all the user's fitness data, including calculated metrics.
+     * Displays all the user's calculated fitness data
      *
      * @param maintenanceCalories user's daily maintenance calories.
      */

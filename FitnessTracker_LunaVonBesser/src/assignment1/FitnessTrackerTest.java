@@ -1,6 +1,6 @@
 package assignment1;
 
-//TEST FILE FOR FITNESS TRACKER
+//TEST FILE FOR FITNESS TRACKERd
 
 import java.util.Scanner;
 
