@@ -1,5 +1,7 @@
 *.java linguist-language=Java
 *.html linguist-documentation
+
+*.js linguist-vendored
 *.css linguist-vendored
 *.json linguist-vendored
 *.xml linguist-vendored
